@@ -6,12 +6,13 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+import org.apache.htrace.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.parquet.avro.AvroParquetWriter;
 import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.metadata.CompressionCodecName;
@@ -66,7 +67,7 @@ public class WParquet {
 
         FileSystem fs = FileSystem.get(conf);
 
-        String uriStr = fs.getWorkingDirectory() + "/test/EmpRecord.parquet";
+        String uriStr = fs.getWorkingDirectory() + "/test2/EmpRecord.parquet";
         URI uri = URI.create(uriStr);
         Path path = new Path(uri);
 
